@@ -29,12 +29,19 @@ class Time(object):
         if self.second > 59:
             raise ValueError("Not an appropriate second (> 59)")
 
+    def __eq__(self, ot):
+        return (
+            self.hour == ot.hour
+            and self.minute == ot.minute
+            and self.second == ot.second
+        )
+
     def __add__(self, ot):
         time_result=Time("00:00:00")
         time_result.second = (self.second+ot.second)%60 
         time_result.min = (self.minute+ot.minute)%60 + (self.second+ot.second)//60
         time_result.hour = (self.hour+ot.hour)%24 + (self.minute+ot.minute)//24
-        return var
+        return time_result
 
     def __mul__(self, ot):
         return NotImplementedError
@@ -43,4 +50,4 @@ class Time(object):
         return NotImplementedError
 
     def __repr__(self):
-        return "{0}h {1}m {2}s".format(self.hour, self.minutes, self.second)
+        return "{0}h {1}m {2}s".format(self.hour, self.minute, self.second)

@@ -1,5 +1,10 @@
 from time_repr import Time
 
+def test_comp():
+    a = Time('05:25:45')
+    b = Time('05:25:45')
+    assert a == b
+
 def test_simple_addition():
     a = Time('05:25:45')
     b = Time('12:24:21')
