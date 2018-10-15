@@ -8,7 +8,14 @@ except ImportError:
 class Time(object):
     
     def __init__(self, ui):
-        """ui : str (user input)"""
+        """Init method for the class.
+        
+        Parameters
+        ==========
+        
+            ui (str): user input; two-digit hour, two-digit minutes, and 
+                two-digit seconds, all separated by colons (":").
+        """
         self.hour, self.minute, self.second = ui.split(':')
 
     def __add__(self, ot):
