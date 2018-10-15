@@ -16,6 +16,8 @@ class Time(object):
             user_input (str): user input; two-digit hour, two-digit minutes, and 
                 two-digit seconds, all separated by colons (":").
         """
+        if not isinstance(user_input, str):
+            raise TypeError("Please input str only")
         self.hour, self.minute, self.second = map(int, user_input.split(':'))
 
     def __add__(self, ot):
