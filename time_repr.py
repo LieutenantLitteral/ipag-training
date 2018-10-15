@@ -6,9 +6,13 @@ except ImportError:
     pass
 
 class Time(object):
-    
+
     def __init__(self, ui):
         """ui : str (user input)"""
+
+        if type(ui) != list:
+            raise TypeError
+
         self.hour, self.minute, self.second = ui.split(':')
 
     def __add__(self, ot):
@@ -22,5 +26,3 @@ class Time(object):
 
     def __repr__(self):
         return "{0}h {1}m {2}s".format(self.hour, self.minutes, self.second)
-
-    
