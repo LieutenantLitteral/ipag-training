@@ -20,6 +20,15 @@ class Time(object):
             raise TypeError("Please input str only")
         self.hour, self.minute, self.second = map(int, user_input.split(':'))
 
+        if self.hour > 24:
+            raise ValueError("Not an appropriate hour (> 23)")
+        
+        if self.minute > 59:
+            raise ValueError("Not an appropriate minute (> 59)")
+        
+        if self.second > 59:
+            raise ValueError("Not an appropriate second (> 59)")
+
     def __add__(self, ot):
         return NotImplementedError
 
