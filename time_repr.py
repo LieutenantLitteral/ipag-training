@@ -12,11 +12,11 @@ class Time(object):
         self.hour, self.minute, self.second = map(int, ui.split(':'))
 
     def __add__(self, ot):
-        time_result=Time("00:00:00")
-        time_result.second = (self.second+ot.second)%60 
-        time_result.min = (self.minute+ot.minute)%60 + (self.second+ot.second)//60
-        time_result.hour = (self.hour+ot.hour)%24 + (self.minute+ot.minute)//24
-        return var
+        time_result = Time("00:00:00")
+        time_result.second = (self.second + ot.second) %60 
+        time_result.minute = ((self.minute + ot.minute) + (self.second + ot.second) // 60) %60
+        time_result.hour = ((self.hour + ot.hour) + (self.minute + ot.minute) // 60) %24
+        return time_result
 
     def __mul__(self, ot):
         return NotImplementedError
@@ -25,6 +25,6 @@ class Time(object):
         return NotImplementedError
 
     def __repr__(self):
-        return "{0}h {1}m {2}s".format(self.hour, self.minutes, self.second)
+        return "{0}h {1}m {2}s".format(self.hour, self.minute, self.second)
 
     

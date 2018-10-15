@@ -4,7 +4,7 @@ def test_simple_addition():
     a = Time('05:25:45')
     b = Time('12:24:21')
     c = a + b
-    assert c == Time('17:51:06')
+    assert c == Time('17:50:06')
 
 def test_modulo_addition():
     a = Time('05:25:45')
