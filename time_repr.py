@@ -7,13 +7,18 @@ except ImportError:
 
 class Time(object):
 
-    def __init__(self, ui):
-        """ui : str (user input)"""
-
-        if type(ui) != list:
-            raise TypeError
-
-        self.hour, self.minute, self.second = ui.split(':')
+    def __init__(self, user_input):
+        """Init method for the class.
+        
+        Parameters
+        ==========
+        
+            user_input (str): user input; two-digit hour, two-digit minutes, and 
+                two-digit seconds, all separated by colons (":").
+        """
+        if not isinstance(user_input, str):
+            raise TypeError("Please input str only")
+        self.hour, self.minute, self.second = map(int, user_input.split(':'))
 
     def __add__(self, ot):
         return NotImplementedError

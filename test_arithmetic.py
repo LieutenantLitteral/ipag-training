@@ -9,6 +9,7 @@ def test_simple_addition():
 def test_modulo_addition():
     a = Time('05:25:45')
     b = Time('20:24:21')
+    c = a + b
     assert c == Time('01:51:06')
 
 def test_forward_multiply():
