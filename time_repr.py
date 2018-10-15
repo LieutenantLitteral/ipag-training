@@ -9,12 +9,18 @@ class Time(object):
     
     def __init__(self, ui):
         """ui : str (user input)"""
-        self.hour, self.minutes, self.second = ui.split(':')
+        self.hour, self.minute, self.second = ui.split(':')
 
     def __add__(self, ot):
         return NotImplementedError
 
-    def __repr__(self):
+    def __mul__(self, ot):
         return NotImplementedError
+
+    def __rmul__(self, ot):
+        return NotImplementedError
+
+    def __repr__(self):
+        return "{0}h {1}m {2}s".format(self.hour, self.minutes, self.second)
 
     
