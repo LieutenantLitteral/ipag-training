@@ -8,8 +8,8 @@ except ImportError:
 class Time(object):
 
     def __init__(self, user_input):
-        """user_input : str (user input)"""
-        self.hour, self.minute, self.second = user_input.split(':')
+        """ui : str (user input)"""
+        self.hour, self.minute, self.second = map(int, user_input.split(':'))
 
     def __add__(self, ot):
         return NotImplementedError
