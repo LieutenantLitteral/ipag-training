@@ -9,7 +9,7 @@ class Time(object):
     
     def __init__(self, ui):
         """ui : str (user input)"""
-        self.hour, self.minute, self.second = ui.split(':')
+        self.hour, self.minute, self.second = map(int, ui.split(':'))
 
     def __add__(self, ot):
         return NotImplementedError
