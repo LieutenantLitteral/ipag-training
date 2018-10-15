@@ -1,4 +1,4 @@
-from timetrain import Time
+from time_repr import Time
 
 def test_repr():
     a = Time('02:06:46')

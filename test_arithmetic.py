@@ -1,4 +1,4 @@
-from timetrain import Time
+from time_repr import Time
 
 def test_simple_addition():
     a = Time('05:25:45')
