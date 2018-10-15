@@ -5,9 +5,6 @@ try:
 except ImportError:
     pass
 
-
-
-
 class Time(object):
     
     def __init__(self, ui):
@@ -15,13 +12,13 @@ class Time(object):
         self.hour, self.minute, self.second = ui.split(':')
 
         if self.hour > 24:
-            raise ValueError("Not an appropriate hour (dumbass)")
+            raise ValueError("Not an appropriate hour (> 23)")
         
         if self.minute > 59:
-            raise ValueError("Not an appropriate minute (dickhead)")
+            raise ValueError("Not an appropriate minute (> 59)")
         
         if self.second > 59:
-            raise ValueError("Not an appropriate second (retarded)")
+            raise ValueError("Not an appropriate second (> 59)")
 
     def __add__(self, ot):
         return NotImplementedError
